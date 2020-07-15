@@ -1,94 +1,73 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-        <!-- Sidebar -->
         <div class="row">
-          <div class="d-flex flex-column justify-content-between sidecol" style="background: #114483">
+          <!-- Sidebar -->
+          <div id="sidecol" class="d-flex flex-column justify-content-between sidecol" style="background: #114483">
             <div>
               <ul class="nav flex-column">
                 <li class="nav-item navitem mx-auto">
-                  <b-button v-b-toggle.sidebar-backdrop class="my_text_button"><img class="sidebar_icon" src="./assets/sidebar_icon_0.svg" style="margin-right:5px"></b-button>
-                  <b-sidebar id="sidebar-backdrop"  
-                    :backdrop-variant="dark" 
-                    backdrop
-                    no-header
-                    width="10%"
-                  >
-                    <div class="d-flex flex-column justify-content-between" style="background: #114483">
-                      <div>
-                        <ul class="nav flex-column">
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_0.svg" style="margin-right:5px"></a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#" style="color:white;"><img class="sidebar_icon" src="./assets/sidebar_icon_1.svg" style="margin-right:5px">Dashboard</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_2.svg" style="margin-right:5px">Representative</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_3.svg" style="margin-right:5px">Maps</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_4.svg" style="margin-right:5px">Messages</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_5.svg" style="margin-right:5px">Places</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_6.svg" style="margin-right:5px">Schedule</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_7.svg" style="margin-right:5px">Form</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_8.svg" style="margin-right:5px">Report</a>
-                          </li>
-                          <li class="nav-item navitem mx-auto">
-                            <a class="nav-link sidebarlink" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_9.svg" style="margin-right:5px">Download File</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <li class="nav-item navitem mx-auto">
-                          <a href="#"><img  src="./assets/sidebar_icon_10.svg" style="margin-right:5px;"></a>
-                        </li>
-                      </div> 
-                    </div>
-                  </b-sidebar>
+                  <b-button v-on:click="greet" class="my_text_button"><img class="sidebar_icon" src="./assets/sidebar_icon_0.svg" style="margin-right:5px"></b-button>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_1.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" id="navlink" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon1.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_1.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_2.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon2.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_2.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_3.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/sidebar_icon_3.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_3.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_4.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon4.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_4.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_5.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon5.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_5.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_6.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon6.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_6.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_7.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon7.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_7.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_8.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/sidebar_icon_8.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_8.svg">
+                  </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" href="#"><img class="sidebar_icon" src="./assets/sidebar_icon_9.svg" style="margin-right:5px"></a>
+                  <a class="nav-link" href="#">
+                    <img v-if="counter=='open' " src = "./assets/longicon9.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_9.svg">
+                  </a>
                 </li>
               </ul>           
             </div>
             <div>
                 <li class="nav-item navitem mx-auto">
-                  <a href="#"><img  src="./assets/sidebar_icon_10.svg" style="margin-right:5px;"></a>
+                  <a href="#"><img  src="./assets/sidebar_icon_10.svg" style="margin-right:5px; text-align:center;"></a>
                 </li>
             </div>            
           </div>
@@ -135,11 +114,11 @@
             
             <!-- Main Content Start-->
             <div class="container" style="margin-top:63px;">
-              <div class="align-self-start"> 
-                <div class="content_row text-left">
-                  My Team
-                </div>
-              </div>
+              <b-row>
+                  <b-col lg="11">
+                      <b-breadcrumb :items="breadcrumb"></b-breadcrumb>
+                  </b-col>
+              </b-row>
               <div>
                 <div class="d-flex justify-content-between content_row">
                   <div class="align-self-center">
@@ -265,8 +244,15 @@ export default {
           { ID: 'JKT008', Mobile_User_Name: 'Siska Erawati'},
           { ID: 'JOG001', Mobile_User_Name: 'Rika Sulistyawati'}
         ],
+      breadcrumb: [
+        {
+          text: 'My Team',
+          href: '#'
+        }
+      ],
       row_items:[],
-      row_item:[]
+      row_item:[],
+      counter:'close'
     }
   },
   methods: {
@@ -275,7 +261,22 @@ export default {
       },
       hideModalAddatt() {
         this.$refs['my-modal'].hide()
-      }
+      },
+      greet: function () {
+            // `this` inside methods points to the Vue instance
+            // `event` is the native DOM event
+            if (this.counter == 'close') {
+                this.counter = 'open'
+                // alert('status side bar ' + this.counter + '!')
+                document.getElementById("sidecol").style.width = "219px";
+                document.getElementById("sidecol").style.textAlign = "left";
+            }
+            else if (this.counter == 'open'){
+                this.counter = 'close'
+                document.getElementById("sidecol").style.width = "5%";
+                // alert('close ' + this.counter + '!')
+            }
+        }
       // addRowInput() {
       //   this.item = ['<p>test<p>'];
       //   this.items.push(this.item);
