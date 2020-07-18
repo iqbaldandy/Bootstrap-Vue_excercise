@@ -10,64 +10,67 @@
                   <b-button v-on:click="greet" class="my_text_button"><img class="sidebar_icon" src="./assets/sidebar_icon_0.svg" style="margin-right:5px"></b-button>
                 </li>
                 <li class="nav-item navitem mx-auto">
-                  <a class="nav-link" id="navlink" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon1.svg">
+                  <a class="nav-link" id="navlink" href="#" style="text-align:left">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/longicon1.svg">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_1.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon2.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/longicon2.svg">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_2.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/sidebar_icon_3.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/sidebar_icon_3.svg" style="text-align:left !important">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_3.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon4.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/longicon4.svg" style="margin-left:-10%; text-align:left;">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_4.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon5.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/longicon5.svg" style="margin-left:-10%;">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_5.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon6.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/longicon6.svg" style="margin-left:-10%;">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_6.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon7.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/longicon7.svg" style="margin-left:-10%;">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_7.svg">
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/sidebar_icon_8.svg">
-                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_8.svg">
+                    <img v-if="counter=='open' " class="ml-n5" src = "./assets/sidebar_icon_8.svg">
+                    <img v-if="counter=='close' " src = "./assets/sidebar_icon_8.svg" >
                   </a>
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon9.svg">
+                    <img v-if="counter=='open' " src = "./assets/longicon9.svg" style="margin-left:-10%;">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_9.svg">
                   </a>
                 </li>
               </ul>           
             </div>
             <div>
-                <li class="nav-item navitem mx-auto">
-                  <a href="#"><img  src="./assets/sidebar_icon_10.svg" style="margin-right:5px; text-align:center;"></a>
+                <li class="nav-item navitem mx-auto" >
+                  <a href="#">
+                    <img v-if="counter=='open' " src="./assets/sidebar_icon_10.svg" style="margin-left:80px">
+                    <img v-if="counter=='close' " src="./assets/sidebar_icon_10.svg" style="margin-left:20px">
+                  </a>
                 </li>
             </div>            
           </div>

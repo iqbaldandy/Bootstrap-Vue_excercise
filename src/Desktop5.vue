@@ -11,7 +11,7 @@
                 </li>
                 <li class="nav-item navitem mx-auto">
                   <a class="nav-link" id="navlink" href="#">
-                    <img v-if="counter=='open' " src = "./assets/longicon1.svg">
+                    <img v-if="counter=='open' " src = "./assets/longicon1.svg" style="text-align:left;">
                     <img v-if="counter=='close' " src = "./assets/sidebar_icon_1.svg">
                   </a>
                 </li>
@@ -261,7 +261,7 @@ export default {
                 this.counter = 'open'
                 // alert('status side bar ' + this.counter + '!')
                 document.getElementById("sidecol").style.width = "219px";
-                document.getElementById("sidecol").style.textAlign = "left";
+                // document.getElementById("sidecol").style.textAlign = "left";
             }
             else if (this.counter == 'open'){
                 this.counter = 'close'
